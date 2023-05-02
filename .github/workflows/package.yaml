@@ -1,0 +1,22 @@
+name: Build Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Build Docker image
+        run: docker build . -t mypackage
+      - name: Create package
+        run: docker run --rm -v $PWD:/data mypackage /bin/bash -c "cd /data && tar -czvf mypackage.tar.gz ."
+      - name: Upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: mypackage
+          path: mypackage.tar.gz
