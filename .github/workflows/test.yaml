@@ -15,6 +15,6 @@ jobs:
       - name: echo-env-vars
         run: |
           echo $GITHUB_PATH
-          echo ${{ github.ref }}
-          echo ${{ github.actor }}
+          echo $GITHUB_REF
+          echo $GITHUB_ACTOR
           echo $RUNNER_OS
