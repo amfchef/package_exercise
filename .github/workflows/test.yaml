@@ -17,4 +17,4 @@ jobs:
           echo $GITHUB_PATH
           echo ${{ github.ref }}
           echo ${{ github.actor }}
-          echo ${{ RUNNER_OS }}
+          echo $RUNNER_OS
