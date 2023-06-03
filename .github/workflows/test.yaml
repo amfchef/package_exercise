@@ -16,5 +16,12 @@ jobs:
         run: |
           echo $GITHUB_PATH
           echo $GITHUB_REF
+          echo $GITHUB_REF_NAME
           echo $GITHUB_ACTOR
           echo $RUNNER_OS
+          echo $GITHUB_ACTION_REPOSITORY
+          echo $GITHUB_BASE_REF
+          echo $GITHUB_REF_TYPE
+          echo $GITHUB_WORKFLOW_REF
+          
+          
